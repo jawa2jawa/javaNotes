@@ -196,7 +196,11 @@ will not Compile,at calling line
 ==>Before Answer the Clone Questio we need to think the Object state based on overriding rules
 ==>RuntimeExceptions will not cause Compile time Errors so need not handle 
 ==>While overriding we SHOULD not use throws and/or throws for Exception/checked Exception,Where as in RuntimeException no such condition
-==> throw new RuntimeException NOT required of throws where as throw new CompileException show need throws CompileException
+==> throw new RuntimeException NOT requires  throws where as throw new CompileException show need throws CompileException
+==>{THERE IS NO RELATION BETWEEN THROW AND THROWS FOR RUNTIMEEXCEPTIONS ,BUT in CHECKED EXCEPTIONS RULE IS IF YOUR NOT HANDLING THE EXCEPTON THEN USE THROWS }
+==>RUNTIME EXCEPTIONS ARE NOT INHERTANCE SPECIFIC WHERE AS CHECKED EXCEPTIONS ARE
+==>AT OVERRIDING WE CAN NOT INCREASE(CAN FILTER Exceptions) THE EXCEPTIONS,BUT WE CAN DECREASE FOR CHECKED EXCEPTIONS THIS CONDITION NOT FOR RUNTIMEEXCEPTIONS
+
 
 
 
