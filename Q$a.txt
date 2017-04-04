@@ -1,0 +1,202 @@
+SBI:10422377554
+****************************************************************************************************
+package blocks;
+
+public class Binding {
+	public void add(Integer a, Integer b) {
+		System.out.println("Integer");
+		System.out.println(a + b);
+	}
+	public void add(Long a, Integer b) {
+		System.out.println("Long");
+		System.out.println(a + b);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Binding b=new Binding();
+		b.add(2,4);
+	}
+
+}
+OutPut:-
+Integer
+6
+=================================================================================================================================================
+package blocks;
+
+public class Binding {
+	public void add(Integer a, Integer b) {
+		System.out.println("Integer"+a + b);
+	}
+	public void add(Long a, Integer b) {
+		System.out.println("Long");
+		System.out.println(a + b);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Binding b=new Binding();
+		b.add(2,4);
+	}
+
+}
+OutPut:-
+Integer24
+================================================================================================================================================================
+package blocks;
+
+public class Binding {
+	public void add(Integer a, Integer b) {
+		System.out.println("Integer"+a + b);
+	}
+	public void add(Long a, Integer b) {
+		System.out.println("Long");
+		System.out.println(a + b);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Binding b=new Binding();
+		b.add(2L,4);
+	}
+
+}
+OutPut:-
+Long
+6
+==================================================================================================================================================================================
+package blocks;
+
+public class Binding {
+	public void add(Integer a, Integer b) {
+		System.out.println("Integer"+a + b);
+	}
+	public void add(Long a, Integer b) {
+		System.out.println("Long"+a + b);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Binding b=new Binding();
+		b.add(2L,4);
+	}
+
+}
+OutPut:-
+Long24
+======================================================================================================================================================
+package blocks;
+
+public class Binding {
+	public void add(Integer a, Integer b) {
+		System.out.println("Integer"+a + b);
+	}
+	public void add(Long a, Integer b) {
+		System.out.println("Long"+a + b);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Binding b=new Binding();
+		b.add(2l,null);
+	}
+
+}
+OutPut:-
+Long2null
+==========================================================================================================================================================================
+package blocks;
+
+public class Binding {
+	public void add(Integer a, Integer b) {
+		System.out.println("Integer"+a + b);
+	}
+	public void add(Long a, Integer b) {
+		System.out.println("Long"+a + b);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Binding b=new Binding();
+		b.add(null,3);//Compilation error
+	}
+
+}
+Output:-
+will not Compile
+=====================================================================================================================================================================================
+package blocks;
+
+public class Binding implements TestI {
+	static final int k;//Compilation error
+
+	public void add(Integer aa, Integer b) {
+		System.out.println("Integer" + aa + b);
+	}
+
+	public void add(Long a, Integer b) {
+		System.out.println("Long" + a + b);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Binding b = new Binding();
+		b.add(2, 3);
+	}
+
+}
+}
+Output:-
+will not Compile
+====================================================================================================
+class Sub_7 extends Sub_6 {
+	void show()  {
+		super.show();
+		System.out.println("Sub_7 functionality");
+		throw new RuntimeException();
+		System.out.println("sadasd");//Compilation error
+	}
+
+}
+Output:-
+will not Compile
+
+=====================================================================================================================
+class Sub_7 extends Sub_6 {
+	void show() throws BlockExceptionC   {//It Specifies the Compile time Exception
+		//super.show();
+		System.out.println("Sub_7 functionality");
+		throw new  BlockExceptionR();//can throw runtime exception NO issues
+	}
+
+}
+
+
+class BlockExceptionC extends Exception{
+	public BlockExceptionC(){
+		super();
+	}
+}
+
+class BlockExceptionR extends RuntimeException{
+	public BlockExceptionR(){
+		super();
+	}
+}
+Output:-
+will not Compile,at calling line
+
+======================================================================================================================================
+
+                                                                        Bullet Points
+    
+==>The closest overriding implementation will be reused by the sub class
+==>clone() needs to be execute in try catch block so CloneNotSupportedException is checked Exception
+==>Before Answer the Clone Questio we need to think the Object state based on overriding rules
+==>RuntimeExceptions will not cause Compile time Errors so need not handle 
+==>While overriding we SHOULD not use throws and/or throws for Exception/checked Exception,Where as in RuntimeException no such condition
+==> throw new RuntimeException NOT required of throws where as throw new CompileException show need throws CompileException
+
+
+
