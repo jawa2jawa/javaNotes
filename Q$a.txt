@@ -22,7 +22,7 @@ public class Binding {
 OutPut:-
 Integer
 6
-==========================================================================================================
+===============================================================================================================================================
 package blocks;
 
 public class Binding implements TestI {
@@ -45,7 +45,7 @@ public class Binding implements TestI {
 OutPut:-
 5Integer
 
-==========================================================================================================
+=================================================================================================================================================
 package blocks;
 
 public class Binding {
@@ -66,7 +66,7 @@ public class Binding {
 }
 OutPut:-
 Integer24
-==========================================================================================================
+================================================================================================================================================================
 package blocks;
 
 public class Binding {
@@ -88,7 +88,7 @@ public class Binding {
 OutPut:-
 Long
 6
-==========================================================================================================
+==================================================================================================================================================================================
 package blocks;
 
 public class Binding {
@@ -108,7 +108,7 @@ public class Binding {
 }
 OutPut:-
 Long24
-==========================================================================================================
+======================================================================================================================================================
 package blocks;
 
 public class Binding {
@@ -148,7 +148,7 @@ public class Binding {
 }
 Output:-
 will not Compile
-==========================================================================================================
+=========================================================================================================
 package blocks;
 
 public class Binding implements TestI {
@@ -185,7 +185,7 @@ class Sub_7 extends Sub_6 {
 Output:-
 will not Compile
 
-==========================================================================================================
+=========================================================================================================
 class Sub_7 extends Sub_6 {
 	void show() throws BlockExceptionC   {//It Specifies the Compile time Exception
 		//super.show();
@@ -209,7 +209,7 @@ class BlockExceptionR extends RuntimeException{
 }
 Output:-
 will not Compile,at calling line
-==========================================================================================================
+========================================================================================================
 package blocks;
 
 public class StrEx {
@@ -268,7 +268,7 @@ public class StrEx {
 }
 OutPut:-
 False
-==========================================================================================================
+=========================================================================================================
 package blocks;
 
 public class StrEx {
@@ -312,6 +312,50 @@ public class StrEx {
 Output:-
 True
 ==========================================================================================================
+package blocks;
+
+public class InnerCEx {
+	/*****************************************************************************************************/
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}
+
+	/********************************************************************************************************/
+	public void show() {
+		OuterEx.Inner1 ic =  new OuterEx.Inner1();//TO CREATE STATIC INNER CLASS OBJECT Only ONE NEW required(CAN nOT allow 2 new) else 2 new operatoers must
+	}
+
+}
+
+class OuterEx {
+	static class Inner1 {
+
+	}
+}
+==========================================================================================================
+package blocks;
+
+public class InnerCEx {
+	/********************************************************************************************************/
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		OuterEx.Inner1 ic =  new OuterEx().new Inner1();
+	}
+
+	/*********************************************************************************************************/
+	public  void show() {
+		OuterEx.Inner1 ic =  new OuterEx().new Inner1();
+	}
+
+}
+
+class OuterEx {
+	  class Inner1 {
+
+	}
+}
+
+==========================================================================================================
 
                                                                         Bullet Points
     
@@ -330,6 +374,8 @@ True
 ==>String:litaral concatination will results Sting Object NOT litaral
 ==>Thumb rule:if String object are passed to == operator the Should not look at values,only look at references,if they are litarals then look at values
 ==>intern() on the current object checks the pool if exist the same String object if exit it discard the current one and returns the object from pool
+==>Inner class can be instantiated from any type of method only diffrence is how they have instantiated 
+==>Only one change if a inner class has static filed it demands the inner class to be static,otherwayaround is not mandatory
 
 
 
