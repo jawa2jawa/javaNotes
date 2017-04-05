@@ -22,7 +22,30 @@ public class Binding {
 OutPut:-
 Integer
 6
-=================================================================================================================================================
+==========================================================================================================
+package blocks;
+
+public class Binding implements TestI {
+
+	public void add(Integer aa, Integer b) {
+		System.out.println(aa + b+"Integer");
+	}
+
+	public void add(Long a, Integer b) {
+		System.out.println("Long" + a + b);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Binding b = new Binding();
+		b.add(2, 3);
+	}
+
+}
+OutPut:-
+5Integer
+
+==========================================================================================================
 package blocks;
 
 public class Binding {
@@ -43,7 +66,7 @@ public class Binding {
 }
 OutPut:-
 Integer24
-================================================================================================================================================================
+==========================================================================================================
 package blocks;
 
 public class Binding {
@@ -65,7 +88,7 @@ public class Binding {
 OutPut:-
 Long
 6
-==================================================================================================================================================================================
+==========================================================================================================
 package blocks;
 
 public class Binding {
@@ -85,7 +108,7 @@ public class Binding {
 }
 OutPut:-
 Long24
-======================================================================================================================================================
+==========================================================================================================
 package blocks;
 
 public class Binding {
@@ -105,7 +128,7 @@ public class Binding {
 }
 OutPut:-
 Long2null
-==========================================================================================================================================================================
+==========================================================================================================
 package blocks;
 
 public class Binding {
@@ -125,7 +148,7 @@ public class Binding {
 }
 Output:-
 will not Compile
-=====================================================================================================================================================================================
+==========================================================================================================
 package blocks;
 
 public class Binding implements TestI {
@@ -162,7 +185,7 @@ class Sub_7 extends Sub_6 {
 Output:-
 will not Compile
 
-=====================================================================================================================
+==========================================================================================================
 class Sub_7 extends Sub_6 {
 	void show() throws BlockExceptionC   {//It Specifies the Compile time Exception
 		//super.show();
@@ -186,8 +209,109 @@ class BlockExceptionR extends RuntimeException{
 }
 Output:-
 will not Compile,at calling line
+==========================================================================================================
+package blocks;
 
-======================================================================================================================================
+public class StrEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String a1="10";
+		String a2="10";
+		if(a1==a2){
+			System.out.println("True");
+		}else{
+			System.out.println("False");
+		}
+	}
+
+}
+Output:-
+True
+==========================================================================================================
+package blocks;
+
+public class StrEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String a1=new String("10");
+		String a2=new String("10");
+		if(a1==a2){
+			System.out.println("True");
+		}else{
+			System.out.println("False");
+		}
+	}
+
+}
+Output:-
+False
+==========================================================================================================
+
+package blocks;
+
+public class StrEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String a1=new String("10");
+		String a2=new String("10");
+		a2=a2.intern();
+		if(a1==a2){
+			System.out.println("True");
+		}else{
+			System.out.println("False");
+		}
+	}
+
+}
+OutPut:-
+False
+==========================================================================================================
+package blocks;
+
+public class StrEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String a1="10";
+		String a3="10";
+		String a2="1010";
+		a1=a1+a3;
+		if(a1==a2){
+			System.out.println("True");
+		}else{
+			System.out.println("False");
+		}
+	}
+
+}
+Output:-
+False
+==========================================================================================================
+package blocks;
+
+public class StrEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String a1="10";
+		String a3="10";
+		String a2="1010";
+		a1=a1+a3;
+		a1=a1.intern();
+		if(a1==a2){
+			System.out.println("True");
+		}else{
+			System.out.println("False");
+		}
+	}
+
+}
+Output:-
+True
+==========================================================================================================
 
                                                                         Bullet Points
     
@@ -200,7 +324,12 @@ will not Compile,at calling line
 ==>{THERE IS NO RELATION BETWEEN THROW AND THROWS FOR RUNTIMEEXCEPTIONS ,BUT in CHECKED EXCEPTIONS RULE IS IF YOUR NOT HANDLING THE EXCEPTON THEN USE THROWS }
 ==>RUNTIME EXCEPTIONS ARE NOT INHERTANCE SPECIFIC WHERE AS CHECKED EXCEPTIONS ARE
 ==>AT OVERRIDING WE CAN NOT INCREASE(CAN FILTER Exceptions) THE EXCEPTIONS,BUT WE CAN DECREASE FOR CHECKED EXCEPTIONS THIS CONDITION NOT FOR RUNTIMEEXCEPTIONS
-
+==>intern() will work only on String litarals
+==>the equals operator '==' is overloaded in case of String datatype,if the 2 arguments are Just litarals then it works as just int data type it checks the values ,if they are references it compares the reference values not the actual values
+==>String:The ossociation mattres if concatination happens first then remaining all will be in concatination,if addition happens BOTH ADITION and COncatination will take place 
+==>String:litaral concatination will results Sting Object NOT litaral
+==>Thumb rule:if String object are passed to == operator the Should not look at values,only look at references,if they are litarals then look at values
+==>intern() on the current object checks the pool if exist the same String object if exit it discard the current one and returns the object from pool
 
 
 
