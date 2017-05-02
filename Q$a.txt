@@ -1,4 +1,3 @@
-SBI:10422377554
 ****************************************************************************************************
 package blocks;
 
@@ -299,8 +298,9 @@ public class StrEx {
 		String a1="10";
 		String a3="10";
 		String a2="1010";
-		a1=a1+a3;
-		a1=a1.intern();
+		a1 = a1 + a3;// it creates new string object in string pool retunrs new
+						// 1010 even though one already exist
+		a1 = a1.intern();//it returns the already existing one 1010
 		if(a1==a2){
 			System.out.println("True");
 		}else{
@@ -442,7 +442,5 @@ Output:-
 ==>Inner class can be instantiated from any type of method only diffrence is how they have instantiated 
 ==>Only one change if a inner class has static filed it demands the inner class to be static,otherwayaround is not mandatory
 ==>For Dlouble d=10d/10D d mandatory but double d=10 d/D is not mandat  for small values but large vlaues it is must double d=1000000000000000000d
-
-
 
 
